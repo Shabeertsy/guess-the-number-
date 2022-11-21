@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="shadow">
+            <div class="box">
+                <h3>Guess The Number 1-10</h3>
+                <input type="text " id="inp" placeholder="Enter your number here...">
+                <br>
+                <button class="button" onclick="buttonClick()">Submit</button>
+
+                <div class="text">
+                    <h4>chances left : <label for="" id="label"></label></h4>
+                    <h4 id="alert"></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let number = 0;
+        let count = 5;
+        let sNumber = Math.floor(Math.random() * 10)
+        console.log(sNumber);
+
+
+        function buttonClick() {
+
+            document.getElementById('label').innerHTML = count
+            number = document.getElementById('inp').value;
+            console.log(number);
+
+            if (number == sNumber) {
+                document.getElementById('alert').innerHTML = '!!! YOU WIN !!!'
+                setTimeout(() => { location.reload() }, 1000)
+            } else if (number > sNumber) {
+                document.getElementById('alert').innerHTML = 'Try a Smaller Value'
+            } else if (number < sNumber) {
+                document.getElementById('alert').innerHTML = 'Try a Greater Value'
+            }
+            if (count == 0) {
+                document.getElementById('alert').innerHTML = 'oops!! You failed'
+                setTimeout(() => { location.reload() }, 1000)
+
+            }
+            count--
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
