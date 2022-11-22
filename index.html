@@ -11,22 +11,26 @@
 
 <body>
 
+    <!-- main body design -->
     <div class="container">
         <div class="shadow">
             <div class="box">
+
                 <h3>Guess The Number 1-10</h3>
                 <input type="text " id="inp" placeholder="Enter your number here...">
                 <br>
                 <button class="button" onclick="buttonClick()">Submit</button>
 
                 <div class="text">
-                    <h4>chances left : <label for="" id="label"></label></h4>
+                    <h3>Chances Left : <label for="" id="label"></label></h3>
                     <h4 id="alert"></h4>
                 </div>
             </div>
         </div>
     </div>
 
+
+    <!-- javascript -->
     <script>
 
         let number = 0;
@@ -41,6 +45,7 @@
             number = document.getElementById('inp').value;
             console.log(number);
 
+            
             if (number == sNumber) {
                 document.getElementById('alert').innerHTML = '!!! YOU WIN !!!'
                 setTimeout(() => { location.reload() }, 1000)
@@ -52,7 +57,6 @@
             if (count == 0) {
                 document.getElementById('alert').innerHTML = 'oops!! You failed'
                 setTimeout(() => { location.reload() }, 1000)
-
             }
             count--
         }
